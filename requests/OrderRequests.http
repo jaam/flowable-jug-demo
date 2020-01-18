@@ -1,0 +1,26 @@
+### Create Order
+POST http://localhost:8090/orders
+Content-Type: application/json
+
+{
+  "orderNumber": "Order-1234",
+  "article": "Nike Shorts",
+  "price": 50.30,
+  "deliveryType": "express"
+}
+
+> {%
+// Response Handler Script
+client.global.set("orderPlacementId", response.body.orderPlacementId)
+%}
+
+### Create Order
+POST http://localhost:8090/orders/{{orderPlacementId}}/shipped
+Content-Type: application/json
+
+{
+  "shipmentDate": "2020-01-21",
+  "deliveryPeriod": "P5D"
+}
+
+###
