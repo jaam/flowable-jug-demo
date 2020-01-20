@@ -45,7 +45,7 @@ public class OrderController {
 	@PostMapping("/orders")
 	public ResponseEntity<ObjectNode> createOrder(@RequestBody OrderDto orderDto) {
 		CaseInstance caseInstance = cmmnRuntimeService.createCaseInstanceBuilder()
-				.caseDefinitionKey("jug_new_order")
+				.caseDefinitionKey("new_order")
 				.variable("orderNumber", orderDto.getOrderNumber())
 				.variable("article", orderDto.getArticle())
 				.variable("price", orderDto.getPrice())
