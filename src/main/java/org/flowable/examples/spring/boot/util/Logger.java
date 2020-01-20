@@ -1,4 +1,4 @@
-package org.flowable.examples.spring.boot.demo;
+package org.flowable.examples.spring.boot.util;
 
 import org.springframework.stereotype.Component;
 

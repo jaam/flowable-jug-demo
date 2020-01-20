@@ -1,4 +1,4 @@
-package org.flowable.examples.spring.boot;
+package org.flowable.examples.spring.boot.orders.model;
 
 /**
  * @author Filip Hrisafov

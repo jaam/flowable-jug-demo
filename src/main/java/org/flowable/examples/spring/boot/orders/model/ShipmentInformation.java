@@ -1,4 +1,4 @@
-package org.flowable.examples.spring.boot;
+package org.flowable.examples.spring.boot.orders.model;
 
 import java.time.LocalDate;
 import java.time.Period;

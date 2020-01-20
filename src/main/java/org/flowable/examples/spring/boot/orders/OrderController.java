@@ -1,4 +1,4 @@
-package org.flowable.examples.spring.boot;
+package org.flowable.examples.spring.boot.orders;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -12,6 +12,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.flowable.cmmn.api.CmmnRuntimeService;
 import org.flowable.cmmn.api.CmmnTaskService;
 import org.flowable.cmmn.api.runtime.CaseInstance;
+import org.flowable.examples.spring.boot.orders.model.OrderDto;
+import org.flowable.examples.spring.boot.orders.model.ShipmentInformation;
 import org.flowable.task.api.Task;
 
 import org.springframework.http.HttpStatus;
@@ -43,7 +45,7 @@ public class OrderController {
 	@PostMapping("/orders")
 	public ResponseEntity<ObjectNode> createOrder(@RequestBody OrderDto orderDto) {
 		CaseInstance caseInstance = cmmnRuntimeService.createCaseInstanceBuilder()
-				.caseDefinitionKey("new_order")
+				.caseDefinitionKey("jug_new_order")
 				.variable("orderNumber", orderDto.getOrderNumber())
 				.variable("article", orderDto.getArticle())
 				.variable("price", orderDto.getPrice())
